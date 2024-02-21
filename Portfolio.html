@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta= charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portifolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/logo.png" class="logo">
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portifolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fa-solid fa-xmark fas" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Hi, My Name is.</p>
+            <h1><span>Laveti Gowthami</span></h1><br><p>And I'm a Student.</p>
+        </div>
+    </div>
+</div> 
+
+
+<!-------About-------------->
+
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/user.jpeg">
+            </div>
+            <div class="about-col-2">
+                <h2 class="sub-title">About Me</h2>
+                <p>As a current student and aspiring python development
+                    enthusiast, I have gained hands-on experience through
+                    projects and internships. Proficient in Python
+                    programming, I have successfully completed data science
+                    projects. Eager to contribute to dynamic teams, I am
+                    committed to learning and making meaningful
+                    contributions as I continue my education.
+                    </p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>  
+
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>UI/UX</span><br>Designing web/App interfaces.</li>
+                        <li><span>Web Development</span><br>Web app Development.</li>
+                        <li><span>Python</span><br>Building machine learning models.</li>
+                        
+                    </ul>
+                </div>
+
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2024 - Current</span><br>B.Tech Final Year CSE at Rajiv Gandhi University of Knowledge Technologies IIIT-Srikakulam.</li>
+                        <li><span>2023 - 2024</span><br>Team lead at College Mini Project.</li>
+                        <li><span>2023 - 2024</span><br>Hands on experience with web development internship at Oasis InfoByte.</li>
+                        
+                    </ul>
+                </div>
+                
+
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2024</span><br>B.Tech at Rajiv Gandhi University of Knowledge Technologies IIIT-Srikakulam.</li>
+                        <li><span>2020</span><br>PUC at Rajiv Gandhi University of Knowledge Technologies IIIT-Srikakulam. </li>
+                        <li><span>2018</span><br> Secondary Education at ZPH School-Tholapi</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</div>
+
+<!----------Contact------------>
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h3 class="sub-title">Contact Me</h3>
+          
+                <p><img src="images/mail.png" style="width: 20px; height: 20px;"> lavetigowthami2@gmail.com.com</p>
+                <p><img src="images/phone.png" style="width: 20px; height: 20px;"> 9550426902</p>
+                <p><img src="images/linkedin.jpg" style="width: 20px; height: 20px;"> https://www.linkedin.com/in/gowthami-laveti-7b25b0266/</p>
+                <p><img src="images/github.png" style="width: 20px; height: 20px;"> https://github.com/Gowthami143</p>
+                <a href="images/my.pdf" download class="btn btn2">Download Resume</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="text" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Messages"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+
+                </form>
+                <span id="msg"></span>
+            </div>
+            
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright ©GowthamiLaveti.</p>
+    </div>
+</div>
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyCKNiZDhWjRgEHertelgLFZbX6lc8ib904HQwI1Au_7FBpTAnitCESjQSEqRmSR_Q9Uw/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById("msg")
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg.innerHTML = "Message sent successfully"
+        setTimeout(function(){
+            msg.innerHTML = ""
+
+        },5000)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+
+
+</body>
+</html>
